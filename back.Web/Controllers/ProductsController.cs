@@ -9,22 +9,22 @@ namespace back.Web.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly IRepository repository;
+        private readonly IProductRepository productRepository;
 
-        public ProductsController(IRepository repository)
+        public ProductsController(IProductRepository productRepository)
         {
-            this.repository = repository;
+            this.productRepository = productRepository;
         }
         // GET: Products
         public IActionResult Index()
         {
-            return View(this.repository.GetProducts());
+            return View(this.productRepository.GetAll());
         }
 
         // GET: Products/Details/5
         public IActionResult Details(int? id)
         {
-            var product = this.repository.GetProduct(id.Value);
+            var product = this.productRepository.GetByIdAsync(id.Value);
             if (product == null)
             {
                 return NotFound();
@@ -48,8 +48,7 @@ namespace back.Web.Controllers
 
                 try
                 {
-                    this.repository.AddProduct(product);
-                    await this.repository.SaveAllAsync();
+                    await this.productRepository.CreateAsync(product);                    
                     return RedirectToAction(nameof(Index));
                 }
                 catch
@@ -61,15 +60,24 @@ namespace back.Web.Controllers
         }
 
         // GET: Products/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var product = this.productRepository.GetByIdAsync(id.Value);
+            if(product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
         }
 
         // POST: Products/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Product product)
         {
             try
             {

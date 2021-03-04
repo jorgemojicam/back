@@ -5,7 +5,7 @@ namespace back.Web.Data.Entities
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Product
+    public class Product:IEntity
     {
         public int Id { get; set; }
 
@@ -24,5 +24,7 @@ namespace back.Web.Data.Entities
 
         [Display(Name="is avalible?")]
         public bool IsAvalible { get; set; }
+
+        public User User { get; set; }
     }
 }
