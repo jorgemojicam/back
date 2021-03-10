@@ -15,6 +15,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\back.Common\back.Common.csproj" />
+  </ItemGroup>
+
 
 
 </Project>

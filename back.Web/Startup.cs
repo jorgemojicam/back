@@ -44,6 +44,8 @@ namespace back.Web
             });
             services.AddControllersWithViews();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ISolicitudRepository, SolicitudRepository>();
+            services.AddScoped<IPaqueteRepository, PaqueteRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
         }
 
