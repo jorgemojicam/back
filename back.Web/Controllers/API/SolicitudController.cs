@@ -21,6 +21,7 @@ namespace back.Web.Controllers.API
         [HttpGet]
         public IActionResult GetSolicitud()
         {
+
             return Ok(this.solicitudRepository.GetAll());
         }
 

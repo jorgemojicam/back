@@ -66,6 +66,9 @@ namespace back.Web
             services.AddScoped<IPaqueteRepository, PaqueteRepository>();
             services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
             services.AddScoped<IMunicipioRepository, MunicipioRepository>();
+            services.AddScoped<ISolicitudPaqueteRepository, SolicitudPaqueteRepository>();
+            services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+            services.AddScoped<IContenidoRepository, ContenidoRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
         }
 
