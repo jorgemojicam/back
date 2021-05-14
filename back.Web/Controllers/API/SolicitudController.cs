@@ -22,7 +22,7 @@ namespace back.Web.Controllers.API
         public IActionResult GetSolicitud()
         {
 
-            return Ok(this.solicitudRepository.GetAll());
+            return Ok(this.solicitudRepository.GetAllEntities());
         }
 
         // GET: api/Solicitud/5
@@ -44,7 +44,7 @@ namespace back.Web.Controllers.API
             var entitySolicitud = new Solicitud
             {
                 Modo = solicitud.Modo,
-                CentroCosto = solicitud.CentroCosto,
+                CentroCostoId = solicitud.CentroCostoId,
                 Estado = solicitud.Estado,
                 EstadoCentroCosto = solicitud.EstadoCentroCosto,
                 FechaCreacion = solicitud.FechaCreacion,
@@ -80,7 +80,7 @@ namespace back.Web.Controllers.API
             }
 
             oldSolicitud.Modo = solicitud.Modo;
-            oldSolicitud.CentroCosto = solicitud.CentroCosto;
+            oldSolicitud.CentroCostoId = solicitud.CentroCostoId;
             oldSolicitud.Estado = solicitud.Estado;
             oldSolicitud.EstadoCentroCosto = solicitud.EstadoCentroCosto;
             oldSolicitud.FechaCreacion = solicitud.FechaCreacion;

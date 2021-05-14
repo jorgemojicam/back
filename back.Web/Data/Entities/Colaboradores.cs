@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace back.Web.Data.Entities
 {
-    public class Municipio:IEntity
+    public class Colaboradores : IEntity
 
     {
         public int Id { get; set; }
         public string Nombre { get; set;}
-        public string Codigo { get; set; }
-        public Departamento Departamento { get; set; }
+        public string Username { get; set; }
+        public CentroCosto CentroCosto { get; set; }
+        public int Rol { get; set; }
     }
 }

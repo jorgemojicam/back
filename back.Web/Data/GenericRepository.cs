@@ -2,6 +2,7 @@
 {
     using Entities;
     using Microsoft.EntityFrameworkCore;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -29,6 +30,11 @@
             await this.context.Set<T>().AddAsync(entity);
             await SaveAllAsync();
             return entity;
+        }
+        public async void CreateMultipleAsync(List<T> entity)
+        {
+            await this.context.Set<T>().AddRangeAsync(entity);
+            await SaveAllAsync();            
         }
         public async Task<T> UpdateAsync(T entity)
         {

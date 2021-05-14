@@ -21,8 +21,8 @@
         [JsonProperty("fechaEnvio")]
         public DateTime? FechaEnvio { get; set; }
 
-        [JsonProperty("centroCosto")]
-        public int? CentroCosto { get; set; }
+        [JsonProperty("centroCostoid")]
+        public int CentroCostoId { get; set; }
 
         [JsonProperty("estado")]
         public int? Estado { get; set; }

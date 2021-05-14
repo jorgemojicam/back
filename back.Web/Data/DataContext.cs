@@ -21,6 +21,10 @@
 
         public DbSet<SolicitudPaquete> SolicitudPaquete { get; set; }
 
+        public DbSet<CentroCosto> CentroCosto { get; set; }
+
+        public DbSet<Colaboradores> Colaboradores { get; set; }
+
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

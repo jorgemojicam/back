@@ -55,6 +55,13 @@ namespace back.Web
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddDbContext<FdlmDataContex>(options =>
+            {
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("coe_connect"));
+            });
+
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
@@ -69,6 +76,8 @@ namespace back.Web
             services.AddScoped<ISolicitudPaqueteRepository, SolicitudPaqueteRepository>();
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
             services.AddScoped<IContenidoRepository, ContenidoRepository>();
+            services.AddScoped<ICentroCostoRepository, CentroCostoRepository>();
+            services.AddScoped<IColaboradoresRepository, ColaboradoresRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
         }
 

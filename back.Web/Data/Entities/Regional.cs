@@ -5,12 +5,9 @@ using System.Threading.Tasks;
 
 namespace back.Web.Data.Entities
 {
-    public class Municipio:IEntity
-
+    public class Regional : IEntity
     {
         public int Id { get; set; }
-        public string Nombre { get; set;}
-        public string Codigo { get; set; }
-        public Departamento Departamento { get; set; }
+        public string Nombre {get;set;}
     }
 }

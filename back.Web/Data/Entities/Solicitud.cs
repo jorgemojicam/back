@@ -18,8 +18,10 @@ namespace back.Web.Data.Entities
 
         public DateTime? FechaEnvio {get;set; }
 
-        public int? CentroCosto { get; set; }
-        
+        public CentroCosto CentroCosto { get; set; }
+
+        public int CentroCostoId { get; set; }
+
         public int? Estado { get; set; }
 
         public int? EstadoCentroCosto { get; set; }
