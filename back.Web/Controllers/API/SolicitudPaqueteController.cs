@@ -2,9 +2,11 @@
 
 namespace back.Web.Controllers.API
 {
+    using back.Common.Models;
     using Data;
     using Data.Entities;
     using Microsoft.AspNetCore.Mvc;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -36,20 +38,26 @@ namespace back.Web.Controllers.API
 
         // POST: api/Solicitud
         [HttpPost]
-        public async Task<IActionResult> CreateSolicitudPaquete([FromBody] Common.Models.SolicitudPaqueteCommon solicitud)
+        public async Task<IActionResult> CreateSolicitudPaquete([FromBody] IList<SolicitudPaqueteCommon> solicitud)
         {
             if (!ModelState.IsValid)
             {
                 return this.BadRequest(ModelState);
             }
-            var entitySolicitud = new SolicitudPaquete
+            List<SolicitudPaquete> newListPaquete = new List<SolicitudPaquete>();
+            foreach (SolicitudPaqueteCommon paqueteCommon in solicitud)
             {
-                Solicitud = new Solicitud() { Id = solicitud.SolicitudId},
-                Paquete = new Paquete() { Id = solicitud.PaqueteId },
-            };
-            var newSolicitud = await this.solicitudpaqueteRepository.CreateAsync(entitySolicitud);
-            return Ok(newSolicitud);
 
+                var entityPaquete = new SolicitudPaquete
+                {
+                    SolicitudId = paqueteCommon.SolicitudId,
+                    PaqueteId = paqueteCommon.PaqueteId
+
+                };
+                var newPaquete = await this.solicitudpaqueteRepository.CreateAsync(entityPaquete);
+                newListPaquete.Add(newPaquete);
+            }
+            return Ok(newListPaquete);
         }
 
         // PUT: api/Solicitud/5

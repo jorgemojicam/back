@@ -9,13 +9,17 @@ namespace back.Web.Data.Entities
 
         public Paquete Paquete { get; set; }
 
-        public int RecibidoCad { get; set; }
+        public int SolicitudId { get; set; }
 
-        public int RecibidoOficina { get; set; }
+        public int PaqueteId { get; set; }
 
-        public int RecibidoSA { get; set; }
+        public int? RecibidoCad { get; set; }
 
-        public int RecibidoREC { get; set; }
+        public int? RecibidoOficina { get; set; }
+
+        public int? RecibidoSA { get; set; }
+
+        public int? RecibidoREC { get; set; }
 
     }
 }

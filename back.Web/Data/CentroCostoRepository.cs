@@ -20,6 +20,12 @@ namespace back.Web.Data
             return this.context.CentroCosto.Include(m => m.Municipio).Include(r => r.Regional);
         }
 
-      
+        public IQueryable<CentroCosto> GetByRegional()
+        {
+            return this.context.CentroCosto.Include(m => m.Regional);
+        }
+
+
+
     }
 }

@@ -8,5 +8,7 @@ namespace back.Web.Data
     public interface ICentroCostoRepository : IGenericRepository<CentroCosto>
     {
         IQueryable<CentroCosto> GetByMunicipio();
+
+        IQueryable<CentroCosto> GetByRegional();
     }
 }

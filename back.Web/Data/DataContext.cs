@@ -25,6 +25,8 @@
 
         public DbSet<Colaboradores> Colaboradores { get; set; }
 
+        public DbSet<Envios> Envios { get; set; }
+
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

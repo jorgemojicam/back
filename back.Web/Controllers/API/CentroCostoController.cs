@@ -13,7 +13,7 @@ namespace back.Web.Controllers.API
         public CentroCostoController(ICentroCostoRepository CentroCostoRepository)
         {
             this.CentroCostoRepository = CentroCostoRepository;
-        }  
+        }
 
         [HttpGet]
         public IActionResult GetCentroCosto()
@@ -32,6 +32,13 @@ namespace back.Web.Controllers.API
         public IActionResult GetCentroCostoByReg(int id)
         {
             var CentroCosto = this.CentroCostoRepository.GetByMunicipio().Where(a => a.Regional.Id == id);
+            return Ok(CentroCosto);
+        }
+
+        [Route("GetOficinas")]
+        public IActionResult GetOficinas()
+        {
+            var CentroCosto = this.CentroCostoRepository.GetByRegional().Where(a => a.Regional.Id != 0);
             return Ok(CentroCosto);
         }
     }

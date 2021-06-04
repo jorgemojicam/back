@@ -10,7 +10,9 @@ namespace back.Web.Data.Entities
 
         public int Tipo { get; set; }
 
-        public int Origen { get; set; }
+        public int OrigenSolId { get; set; }
+
+        public int DestinoSolId { get; set; }
 
         public string Solicitante { get; set; }
 

@@ -13,5 +13,6 @@ namespace back.Web.Data.Entities
         public Municipio Municipio { get; set; }
         public Regional Regional { get; set; }
         public string Codigo { get; set; }
+        public bool? Activo { get; set; }
     }
 }

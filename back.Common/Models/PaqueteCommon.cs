@@ -9,7 +9,10 @@
 
         [JsonProperty("oficinaDestino")]
         public int OficinaDestino { get; set; }
-        
+
+        [JsonProperty("oficinaOrigen")]
+        public int OficinaOrigen { get; set; }
+
         [JsonProperty("direccionDestino")]
         public string DireccionDestino { get; set; }
 
@@ -17,13 +20,13 @@
         public string NombreDestinatario { get; set; }
 
         [JsonProperty("cedulaDestinatario")]
-        public string CedulaDestinatario { get; set; }
+        public int CedulaDestinatario { get; set; }
 
         [JsonProperty("municipio")]
-        public MunicipioCommon Municipio { get; set; }
+        public int Municipio { get; set; }
 
         [JsonProperty("contenido")]
-        public ContenidoCommon Contenido { get; set; }
+        public int Contenido { get; set; }
 
         [JsonProperty("anexo")]
         public int Anexo { get; set; }

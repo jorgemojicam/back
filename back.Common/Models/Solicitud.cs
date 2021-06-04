@@ -12,14 +12,17 @@
         [JsonProperty("origen")]
         public int Origen { get; set; }
 
+        [JsonProperty("destino")]
+        public int Destino { get; set; }
+
         [JsonProperty("solicitante")]
         public string Solicitante { get; set; }
 
         [JsonProperty("fechaCreacion")]
-        public DateTime? FechaCreacion { get; set; }
+        public DateTime FechaCreacion { get; set; }
 
         [JsonProperty("fechaEnvio")]
-        public DateTime? FechaEnvio { get; set; }
+        public DateTime FechaEnvio { get; set; }
 
         [JsonProperty("centroCostoid")]
         public int CentroCostoId { get; set; }

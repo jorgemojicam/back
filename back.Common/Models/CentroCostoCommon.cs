@@ -9,8 +9,11 @@
 
         [JsonProperty("nombre")]
         public string Nombre { get; set; }
-        
-      
+
+        [JsonProperty("activo")]
+        public bool? Activo { get; set; }
+
+
 
     }
 }

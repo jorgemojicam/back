@@ -50,7 +50,8 @@ namespace back.Web.Controllers.API
                 FechaCreacion = solicitud.FechaCreacion,
                 FechaEnvio = solicitud.FechaEnvio,
                 Guia = solicitud.Guia,
-                Origen = solicitud.Origen,
+                OrigenSolId = solicitud.Origen,
+                DestinoSolId = solicitud.Destino,
                 Precinto = solicitud.Precinto,
                 Solicitante = solicitud.Solicitante,
                 Tipo = solicitud.Tipo,
@@ -86,7 +87,8 @@ namespace back.Web.Controllers.API
             oldSolicitud.FechaCreacion = solicitud.FechaCreacion;
             oldSolicitud.FechaEnvio = solicitud.FechaEnvio;
             oldSolicitud.Guia = solicitud.Guia;
-            oldSolicitud.Origen = solicitud.Origen;
+            oldSolicitud.OrigenSolId = solicitud.Origen;
+            oldSolicitud.DestinoSolId = solicitud.Destino;
             oldSolicitud.Precinto = solicitud.Precinto;
             oldSolicitud.Solicitante = solicitud.Solicitante;
             oldSolicitud.Tipo = solicitud.Tipo;

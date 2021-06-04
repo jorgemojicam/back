@@ -17,7 +17,7 @@ namespace back.Web.Data
 
         public IQueryable<Colaboradores> GetByCentroCosto()
         {
-            return this.context.Colaboradores.Include(m => m.CentroCosto);
+            return this.context.Colaboradores.Include(m => m.CentroCosto).Include(a => a.CentroCosto.Municipio).Include(d => d.CentroCosto.Municipio.Departamento);
         }
 
       

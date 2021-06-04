@@ -78,6 +78,8 @@ namespace back.Web
             services.AddScoped<IContenidoRepository, ContenidoRepository>();
             services.AddScoped<ICentroCostoRepository, CentroCostoRepository>();
             services.AddScoped<IColaboradoresRepository, ColaboradoresRepository>();
+            services.AddScoped<IRegionalRepository, RegionalRepository>();
+            services.AddScoped<IEnviosRepository, EnviosRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
         }
 

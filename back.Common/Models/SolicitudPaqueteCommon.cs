@@ -14,16 +14,16 @@
         public int PaqueteId { get; set; }
 
         [JsonProperty("recididocad")]
-        public int RecididoCad { get; set; }
+        public int? RecididoCad { get; set; }
 
         [JsonProperty("recibidooficina")]
-        public int RecibidoOficina { get; set; }
+        public int? RecibidoOficina { get; set; }
 
         [JsonProperty("recibidosa")]
-        public int RecibidoSA { get; set; }
+        public int? RecibidoSA { get; set; }
 
         [JsonProperty("recibidorec")]
-        public int RecibidoREC { get; set; }
+        public int? RecibidoREC { get; set; }
 
 
     }
